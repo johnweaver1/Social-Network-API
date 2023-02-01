@@ -13,13 +13,14 @@ const userSchema = new Schema(
             required: true,
             unique: true,
             match: [
-                /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address',
+                /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 
+                'Please enter a valid email address',
             ],
         },
         thoughts: [
             {
                 type: Schema.Types.ObjectId,
-                ref: "Thoughts",          
+                ref: "Thought",
             },
         ],
         friends: [
@@ -35,15 +36,13 @@ const userSchema = new Schema(
         },
         id: false,
     }
-)
+);
 
-userSchema
-    .virtual("friendCount")
-    .get(function () {
-        return this.friends.length;
-    })
+userSchema.virtual("friendCount").get(function () {
+    return this.friends.length;
+});
 
-    //initalize our User model
-    const User = model('user', userSchema);
-    //export user model
-    module.exports = User;
+//initalize our User model
+const User = model('User', userSchema);
+//export user model
+module.exports = User;
