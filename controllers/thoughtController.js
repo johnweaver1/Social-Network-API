@@ -10,11 +10,11 @@ module.exports = {
     //Get a thought
     getAThought(req, res) {
         Thought.findOne({ _id: req.params.thoughtId })
-        .select("__v")
+        .select("-__v")
         .then((thought) =>
         !thought
-        ? res.status(404).json({ message: `ID didn't match a thought`})
-        : res.json(thought)
+          ? res.status(404).json({ message: `ID didn't match a thought`})
+          : res.json(thought)
         )
         .catch((err) => res.status(500).json(err));
     },
