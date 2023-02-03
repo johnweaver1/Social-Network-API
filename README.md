@@ -14,7 +14,7 @@
   ## Installation
   Download/clone the repo to your computer. npm i then npm start! Open op insomnia and use the routes!
   ## Usage
-  Video Link for help: [Uploading Tutorial-Video.webm…]()
+  Video Link for help: [Tutorial-Video.webm](https://user-images.githubusercontent.com/110701898/216551116-18e34c6c-373e-4f8d-b3d0-4300cd3ce0f9.webm)
   ## Contribution
   N/A
   ## Tests
